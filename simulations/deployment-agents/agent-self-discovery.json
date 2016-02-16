@@ -1,0 +1,20 @@
+{
+    "NAME": "DiscoverDep",
+    "PRE": "S#rand%3==0",
+    "POST": [
+        "A#DiscoverDep",
+        {
+            "PRE": "S#rand%3==0",
+            "POST":[
+                "{'ns-uri':'registry/ns-uri1.json','resources':S#resources,'routes':S#routes,'neighbors':S#neighbor}"
+            ],
+            "TARGET": [
+                "PUT[aaaa::1]:5683/network"
+            ]
+        }
+    ],
+    "TARGET": [
+        "POST[ff02::2]:5683/A/DiscoverDep",
+        "POST[0::1]:5683/A/DiscoverNot"
+    ]
+}
