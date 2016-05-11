@@ -1,21 +1,16 @@
-# Toward Organic Ambient Intelligences ? EMMA
-## Abstract
- 
-The Ambient Intelligence (AmI) is a research area investigating AI techniques to create Responsive Environments
-(RE). Wireless Sensor and Actor Network (WSAN) are the supports for communications between the appliances,
-the deployed services and Human Computer Interface (HCI).
+# EMMA: Environment Monitoring & Management Agent
 
-This thesis focuses on the design of RE with autonomic properties i.e. system that have the ability to manage
-themselves. Such environments are open, large scale, dynamic and heterogeneous which induce some difficulties
-in their management by monolithic system. The bio-inspired proposal considers all devices like independent
-cells forming an intelligent distributed organism. Each cell is programmed by a DNA-RNA process composed of
-reactive rules describing its internal and external behaviour. These rules are modelled by reactive agents with
-self-rewriting features offering dynamic reprogramming abilities.
+EMMA provides software tools to build distributed Smart Environment based on Wireless Sensor & Actor System (WSAN). The different software provides a middleware for tiny embedded plateforms (emma-node), a simulation environment based on platform emulation (emma-cooja) and a Java application for system supervision and application design (emma-agent-designer). 
 
-The EMMA framework is composed of a modular Resource Oriented Architecture (ROA) Middleware based
-on IPv6 LoW Power Wireless Area Networks (6LoWPAN) technology and a MAPE-K architecture to design
-multi-scale AmI. The different relations between technical issues and theoretical requirements are discussed
-through the platforms, the network, the middleware, the mobile agents, the application deployment to the
-intelligent system. Two algorithms for AmI are proposed: an Artificial Neural Controller (ANC) model for
-automatic control of appliances with learning processes and a distributed Voting Procedures (VP) to synchronize
-the decisions of several system components over the WSAN.
+An application is composed of distributed processings over the WSAN in order to manage the system outputs: actuators, remote Web applications, etc. For example an application could be a morning clock which starts progressively the lights and the favorite sound platform according to a Web calendar. 
+
+The framework provides an abstraction of network and node hardware to a Distributed RestFul Ressource architecture. Each Input-Output (IO) of the system, such as actuators, sensors or remote web services, are accessible thanks to an URI. The middleware provides service container interfaces in order to implement hardcoded processings into the nodes, which are interconnected by Service Choreographies. Three basic services are availables: System (/S/) for the control of sensors, actuators and system parameters, Local (/L/) for the storage of temporary variables or files and Agent Virtual Machine (/A/). The agents are implemented into tiny JSON files which describes rules of Publish-Subscribe patterns according to internal node state. When an agent is trigered, it emits one or several Web / CoAP requests on a ressource URI. Hence a Service Choregraphy is a ressources graph formed by a set of agents which produced distributed computation flows between node services in the WSAN (sensor, ligths, heating, alarm clock, etc), local Web Services (Tablet, SmartPhone, TV, etc) and Internet platforms (sound platform, calendar, etc),.
+
+### emma-node
+
+### emma-cooja
+
+### emma-agent-designer
+
+
+
